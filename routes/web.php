@@ -23,7 +23,6 @@ Route::get('/', function () {
    return redirect ('login');
 });
 
-Auth::routes();
 
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
@@ -32,9 +31,7 @@ Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/dasboard', [DasboardController::class, 'index'])->middleware('auth');
 Route::get('/users', [UsersController::class, 'index'])->middleware('auth');
-// Route::get('/dasboard/create', [DasboardController::class, 'create'])->middleware('auth');
-// Route::post('/dasboard/post', [DasboardController::class, 'store'])->middleware('auth');
-// Route::post('/dasboard/post', [DasboardController::class, 'destroy'])->middleware('auth');
+
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'tambah']);
 
