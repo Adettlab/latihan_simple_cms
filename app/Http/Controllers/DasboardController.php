@@ -85,7 +85,6 @@ class DasboardController extends Controller
             'id_categories'=> $request->id_categories,
             'isiPost'=> strip_tags($request->isiPost) 
         ]);
-        
         return redirect('/dasboard')->with('success','');
     }
 
